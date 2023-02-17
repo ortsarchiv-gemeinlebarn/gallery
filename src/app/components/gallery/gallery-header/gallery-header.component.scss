@@ -1,0 +1,22 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: var(--gap);
+}
+
+h1 {
+    font-size: 1.75rem;
+    color: var(--text-color-main);
+}
+
+h2 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text-color-light);
+}
+
+p {
+    margin-top: 20px;
+    color: var(--text-color-main);
+}

@@ -1,0 +1,91 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: var(--gap);
+    padding-top: var(--gap);
+    margin-bottom: var(--gap);
+    border-bottom: 1px var(--background-color-shadow) solid;
+    background-color: var(--background-color);
+    position: sticky;
+    top: 0px;
+}
+
+.oag-logo {
+    height: 40px;
+    outline: none;
+    transition: all ease 300ms;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+
+    path {
+        fill: var(--foreground-color);
+    }
+}
+
+.menu {
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        li {
+            margin: 0rem 0.5rem;
+            transition: all ease 300ms;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__main {
+        li {
+            font-size: 1rem;
+            color: var(--text-color-main);
+
+            &:hover {
+                color: var(--foreground-color);
+            }
+        }
+    }
+
+    &__functional {
+        margin-top: 0.5rem;
+
+        li {
+            font-size: 0.9rem;
+            color: var(--text-color-shadow);
+
+            &:hover {
+                color: var(--text-color-main);
+            }
+        }
+    }
+}
+
+.titles {
+    text-align: right;
+    transition: all ease 300ms;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+
+    h1 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-color-main);
+    }
+
+    p {
+        font-size: 0.9rem;
+        color: var(--text-color-shadow);
+    }
+}

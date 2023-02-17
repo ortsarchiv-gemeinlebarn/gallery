@@ -1,0 +1,23 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from 'src/app/services/data/data.service';
+import { DiashowService } from 'src/app/services/diashow/diashow.service';
+
+@Component({
+    selector: 'oag-diashow-container',
+    templateUrl: './diashow-container.component.html',
+    styleUrls: ['./diashow-container.component.scss']
+})
+export class DiashowContainerComponent implements OnInit {
+    constructor(public data: DataService, public diashow: DiashowService, private route: ActivatedRoute) { }
+
+    ngOnInit(): void {
+        this.route.params.subscribe(params => {
+            const id = params['itemId'];
+
+            console.log("[OAG]", "[Gallery]", "open diashow with item id =", id);
+            this.diashow.setItemById(id);
+        });
+    }
+}
+

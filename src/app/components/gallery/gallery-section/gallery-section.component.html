@@ -1,0 +1,7 @@
+<header>
+    <h2>{{ data?.title }}</h2>
+    <h3 *ngIf="data?.subtitle">{{ data?.subtitle }}</h3>
+</header>
+<div class="items">
+    <oag-gallery-section-item *ngFor="let item of data?.items" [data]="item" [routerLink]="['/diashow', item.id]"></oag-gallery-section-item>
+</div>
