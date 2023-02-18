@@ -27,6 +27,7 @@ export class DiashowService {
     public presentationAreaTransition: string = "";
     public presentationAreaOpacity: string = "";
 
+    public infoZoom: number = 1;
     public showPublicLink = false;
     public publicLinkContentIsVisibale = false;
 
@@ -48,7 +49,7 @@ export class DiashowService {
         this.setItemById(this.beforeItem.id);
     }
 
-    public next() {
+    public next(fromAutoplay = false) {
         if (this.afterItem === null) {
 
             if (this.playing) {
@@ -76,16 +77,15 @@ export class DiashowService {
         }
 
         const id = this.afterItem.id;
-        const t = 300;
+        const t = fromAutoplay ? 400 : 50;
 
-        this.presentationAreaTransition = "opacity ease 300ms"
+        this.presentationAreaTransition = "opacity linear 300ms"
         this.presentationAreaOpacity = "0"
 
         setTimeout(() => this.setItemById(id), t);
         setTimeout(() => {
             this.presentationAreaOpacity = "1"
-            this.presentationAreaTransition = "opacity ease 300ms"
-        }, 1.1 * t);
+        }, t);
     }
 
     public playPause() {
@@ -95,7 +95,7 @@ export class DiashowService {
         }
         else {
             this.internalIntervalObject = setInterval(() => {
-                this.next();
+                this.next(true);
             }, this.internalIntervalMs);
             this.playing = true;
         }
@@ -112,5 +112,16 @@ export class DiashowService {
 
         this.interval--;
         this.internalIntervalMs = this.interval * 1000;
+    }
+
+    public infoZoomUp() {
+        this.infoZoom++;
+    }
+
+    public infoZoomDown() {
+        if (this.infoZoom <= 1)
+            return;
+
+        this.infoZoom--;
     }
 }

@@ -16,10 +16,48 @@
     transition-property: background-color, color;
     transition-timing-function: ease;
     transition-duration: 300ms;
+
+    &--small {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 300;
+            margin-top: 3rem;
+
+            strong {
+                font-weight: 500;
+            }
+        }
+
+        p {
+            font-size: 1.15rem;
+            margin-top: 1rem;
+        }
+
+        .oag-logo {
+            width: 100%;
+            padding: 2rem;
+            max-width: 200px;
+        }
+    }
 }
 
 main {
     flex: 1;
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    .viewport--small {
+        display: flex;
+    }
+
+    .viewport--large {
+        display: none;
+    }
 }

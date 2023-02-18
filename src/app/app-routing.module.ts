@@ -5,10 +5,9 @@ import { GalleryContainerComponent } from './components/gallery/gallery-containe
 import { PageComponent } from './components/page/page.component';
 
 const routes: Routes = [
-    { path: 'gallery', component: GalleryContainerComponent },
+    { path: '', component: GalleryContainerComponent },
     { path: 'diashow/:itemId', component: DiashowContainerComponent },
-    { path: 'page/:key', component: PageComponent },
-    { path: '', redirectTo: '/gallery', pathMatch: 'full' }
+    { path: 'page/:key', component: PageComponent }
 ];
 
 @NgModule({

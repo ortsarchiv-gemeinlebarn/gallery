@@ -29,7 +29,7 @@
 
 <nav class="menu">
     <ul class="menu__main">
-        <li [routerLink]="['/gallery']">Galerie</li>
+        <li [routerLink]="['/']">Galerie</li>
         <li *ngFor="let page of data.object?.pages" [routerLink]="['/page', page.key]">{{ page.title }}</li>
     </ul>
     <ul class="menu__functional">
@@ -42,7 +42,7 @@
     </ul>
 </nav>
 
-<div class="titles" [routerLink]="['/gallery']">
+<div class="titles" [routerLink]="['/']">
     <h1>{{ data.object?.title }}</h1>
     <p>{{ data.object?.subtitle }}</p>
 </div>

@@ -1,4 +1,4 @@
 export const environment = {
     title: "Faschingsumzug in Lewing",
-    data: "/assets/data-sample.json"
+    data: "https://data.ortsarchiv-gemeinlebarn.org/galleries/fasching/data.json"
 };
