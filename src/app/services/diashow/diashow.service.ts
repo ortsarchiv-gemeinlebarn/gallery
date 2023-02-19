@@ -16,6 +16,7 @@ export class DiashowService {
 
     public showDiashowSettings = false;
     public hideButtomControls: boolean = false;
+    public hideInfo: boolean = false;
     public darkmode: boolean = false;
     public playing: boolean = false;
     public infinite: boolean = false;
@@ -31,7 +32,9 @@ export class DiashowService {
     public showPublicLink = false;
     public publicLinkContentIsVisibale = false;
 
-    constructor(private data: DataService) { }
+    constructor(private data: DataService) {
+        this.darkmode = window.localStorage.getItem("oag-darkmode") === "true";
+    }
 
     public setItemById(id: string) {
         const obj = this.data.getItemWithNeiboursById(id);
@@ -123,5 +126,10 @@ export class DiashowService {
             return;
 
         this.infoZoom--;
+    }
+
+    public toggleDarkmode() {
+        this.darkmode = !this.darkmode;
+        window.localStorage.setItem("oag-darkmode", this.darkmode.toString());
     }
 }

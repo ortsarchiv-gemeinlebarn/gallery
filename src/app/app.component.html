@@ -3,7 +3,9 @@
     <main *ngIf="data.object">
         <oag-header></oag-header>
         <oag-diashow-controls *ngIf="diashow.showDiashowSettings"></oag-diashow-controls>
-        <router-outlet></router-outlet>
+        <div class="outlet">
+            <router-outlet></router-outlet>
+        </div>
     </main>
 </div>
 <div class="viewport viewport--small" [ngClass]="{'darkmode': diashow.darkmode}">

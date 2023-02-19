@@ -1,15 +1,26 @@
 # Gallery
 
+## Galleries
+
+- [Fasching](https://fasching.ortsarchiv-gemeinlebarn.org/)
+
 ## ToDo's
 
 - [x] Header Hover Image z-index
-- [ ] Titel-Attribut
-- [ ] Config via environment/json/etc. für unabhängiges App Deployment
+- [x] Titel-Attribut
 - [x] Favicon
-- [ ] Navigation mit Pfeiltasten
+- [x] Header/Content Padding
+- [x] Navigation mit Pfeiltasten
 - [x] Hinweis für zu kleine Screens
-- [ ] Save Darkmode Setting
-- [ ] Inhalt Impressum
-- [ ] Inhalt Ortsarchiv
+- [x] Save Darkmode Setting
+- [x] Info ausblenden
+- [x] Inhalt Impressum
+- [x] Inhalt Ortsarchiv
 - [x] Zurück button bei Navigation
-- [ ]
+- [x] Signaturen
+
+## Build
+
+```powershell
+ng build --configuration fasching --output-path ./dist/fasching
+```

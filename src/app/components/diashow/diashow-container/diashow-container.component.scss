@@ -57,6 +57,14 @@
         justify-content: space-between;
         margin-top: 1rem;
 
+        &[hidden] {
+            display: none;
+        }
+
+        &__rechts {
+            text-align: right;
+        }
+
         &__description {
             color: var(--text-color-main);
             font-size: 1rem;
@@ -64,7 +72,8 @@
             min-height: 1.5rem;
         }
 
-        &__author {
+        &__author,
+        &__reference {
             font-size: 0.8rem;
             color: var(--text-color-shadow);
         }

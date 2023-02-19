@@ -5,12 +5,13 @@
 <!-- View Area -->
 <div class="media">
     <div *ngIf="!diashow.publicLinkContentIsVisibale" class="presentation-area" [ngStyle]="{ 'background-image': 'url('+diashow.currentItem?.media?.enlarged?.url+')', 'transition': diashow.presentationAreaTransition, 'opacity': diashow.presentationAreaOpacity  }"></div>
-    <div class="info" *ngIf="!diashow.publicLinkContentIsVisibale" [ngStyle]="{zoom: 1 + (diashow.infoZoom / 10.0)}">
+    <div class="info" [hidden]="diashow.hideInfo" *ngIf="!diashow.publicLinkContentIsVisibale" [ngStyle]="{zoom: 1 + (diashow.infoZoom / 10.0)}">
         <div class="info__links">
             <div class="info__author">{{ diashow.currentItem?.author }}</div>
             <div class="info__description">{{ diashow.currentItem?.description }}</div>
         </div>
         <div class="info__rechts">
+            <div class="info__reference">{{ diashow.currentItem?.reference }}</div>
             <div class="info__section-title">{{ diashow.currentSectionTitle }}</div>
         </div>
     </div>
@@ -31,14 +32,12 @@
 
     <button class="button button--icon-left before" [disabled]="!diashow.beforeItem" (click)="diashow.before()">
         <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
-            <title>Arrow Back</title>
             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292" />
         </svg>
-        <span>Vorheriges Bild</span>
+        <span>Rückwärts</span>
     </button>
-    <button class="button button--icon-only gallery" [routerLink]="['/']">
+    <button class="button button--icon-only gallery" [routerLink]="['/']" title="Übersicht">
         <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
-            <title>Grid</title>
             <rect x="48" y="48" width="176" height="176" rx="20" ry="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
             <rect x="288" y="48" width="176" height="176" rx="20" ry="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
             <rect x="48" y="288" width="176" height="176" rx="20" ry="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
@@ -46,9 +45,8 @@
         </svg>
     </button>
     <button class="button button--icon-right next" [disabled]="!diashow.afterItem" (click)="diashow.next()">
-        <span>Nächstes Bild</span>
+        <span>Vorwärts</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
-            <title>Arrow Forward</title>
             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100" />
         </svg>
     </button>

@@ -3,8 +3,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "type": "npm",
-            "script": "start",
+            "label": "ng-serve",
+            "type": "shell",
+            "command": "cd ${workspaceFolder} && ng serve",
             "isBackground": true,
             "problemMatcher": {
                 "owner": "typescript",

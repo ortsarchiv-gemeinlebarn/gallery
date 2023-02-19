@@ -1,4 +1,4 @@
-@import 'assets/fonts/import';
+@import 'fonts';
 
 :root {
     --gap: 2rem;
@@ -7,7 +7,7 @@
     --background-color-shadow: #f8f8f8;
     --foreground-color: #000;
     --text-color-main: #333;
-    --text-color-shadow: #777;
+    --text-color-shadow: #999;
     --text-color-light: #ccc;
     --button-foreground-color: #333;
     --button-background-color: #f4f4f4;
@@ -23,7 +23,7 @@
     --background-color-shadow: #292929;
     --foreground-color: #fff;
     --text-color-main: #fff;
-    --text-color-shadow: #ccc;
+    --text-color-shadow: #aaa;
     --text-color-light: #777;
     --button-foreground-color: #f4f4f4;
     --button-background-color: #131313;
@@ -47,6 +47,48 @@ body {
     width: 100%;
     height: 100%;
     font-family: 'Jost', sans-serif;
+}
+
+p {
+    text-align: justify;
+    margin-bottom: var(--gap);
+}
+
+ul {
+    font-size: 1rem;
+    font-weight: normal;
+    list-style: none;
+
+    li:before {
+        content: '-';
+        margin: 0 1em;
+        text-align: left;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color-main);
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+a:before {
+    content: '';
+    background-color: rgba(89, 87, 209, 0.2);
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 100%;
+    height: 8px;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+}
+
+a:hover::before {
+    bottom: 0;
+    height: 100%;
 }
 
 .button {

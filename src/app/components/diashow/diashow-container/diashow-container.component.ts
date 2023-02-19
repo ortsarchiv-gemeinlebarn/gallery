@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from 'src/app/services/data/data.service';
 import { DiashowService } from 'src/app/services/diashow/diashow.service';
@@ -18,6 +18,16 @@ export class DiashowContainerComponent implements OnInit {
             console.log("[OAG]", "[Gallery]", "open diashow with item id =", id);
             this.diashow.setItemById(id);
         });
+    }
+
+    @HostListener('window:keyup', ['$event'])
+    keyEvent(event: KeyboardEvent) {
+        if (event.key == "ArrowRight") {
+            this.diashow.next();
+        }
+        if (event.key == "ArrowLeft") {
+            this.diashow.before();
+        }
     }
 }
 

@@ -29,12 +29,13 @@
 
 <nav class="menu">
     <ul class="menu__main">
-        <li [routerLink]="['/']">Galerie</li>
+        <li [routerLink]="['/']">Übersicht</li>
         <li *ngFor="let page of data.object?.pages" [routerLink]="['/page', page.key]">{{ page.title }}</li>
     </ul>
     <ul class="menu__functional">
-        <li (click)="diashow.showDiashowSettings = !diashow.showDiashowSettings">Diashow Menü</li>
-        <li (click)="diashow.darkmode = !diashow.darkmode">
+        <li class="headline">Funktionsmenü: </li>
+        <li (click)="diashow.showDiashowSettings = !diashow.showDiashowSettings">Diashow</li>
+        <li (click)="diashow.toggleDarkmode()">
             Farbschema
             <span [hidden]="diashow.darkmode">verdunkeln</span>
             <span [hidden]="!diashow.darkmode">erhellen</span>
