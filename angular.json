@@ -27,6 +27,7 @@
                         "inlineStyleLanguage": "scss",
                         "assets": [
                             "src/favicon.svg",
+                            "src/.htaccess",
                             "src/assets/fonts"
                         ],
                         "styles": [

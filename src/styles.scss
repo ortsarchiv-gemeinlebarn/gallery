@@ -3,6 +3,9 @@
 :root {
     --gap: 2rem;
 
+    --primary-color: #323277;
+    --link-background-color: rgba(50, 50, 119, 0.2);
+
     --background-color: #fff;
     --background-color-shadow: #f8f8f8;
     --foreground-color: #000;
@@ -60,7 +63,7 @@ ul {
     list-style: none;
 
     li:before {
-        content: '-';
+        content: '–';
         margin: 0 1em;
         text-align: left;
     }
@@ -72,23 +75,23 @@ a {
     font-weight: 500;
     position: relative;
     z-index: 1;
-}
 
-a:before {
-    content: '';
-    background-color: rgba(89, 87, 209, 0.2);
-    position: absolute;
-    left: 0;
-    bottom: 3px;
-    width: 100%;
-    height: 8px;
-    z-index: -1;
-    transition: all .3s ease-in-out;
-}
+    &:before {
+        content: '';
+        background-color: var(--link-background-color);
+        position: absolute;
+        left: 0;
+        bottom: 3px;
+        width: 100%;
+        height: 8px;
+        z-index: -1;
+        transition: all .3s ease-in-out;
+    }
 
-a:hover::before {
-    bottom: 0;
-    height: 100%;
+    &:hover:before {
+        bottom: 0;
+        height: 100%;
+    }
 }
 
 .button {

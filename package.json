@@ -6,7 +6,8 @@
         "start": "ng serve",
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
-        "test": "ng test"
+        "test": "ng test",
+        "ci:build:fasching": "ng build --configuration fasching --output-path ./dist/fasching"
     },
     "private": true,
     "dependencies": {
