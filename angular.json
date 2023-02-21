@@ -28,6 +28,7 @@
                         "assets": [
                             "src/favicon.svg",
                             "src/.htaccess",
+                            "src/assets/data-sample.json",
                             "src/assets/fonts"
                         ],
                         "styles": [

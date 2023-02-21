@@ -17,6 +17,7 @@ export class DiashowService {
     public showDiashowSettings = false;
     public hideButtomControls: boolean = false;
     public hideInfo: boolean = false;
+    public hideMenu: boolean = false;
     public darkmode: boolean = false;
     public playing: boolean = false;
     public infinite: boolean = false;

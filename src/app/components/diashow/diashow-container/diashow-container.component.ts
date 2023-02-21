@@ -25,8 +25,13 @@ export class DiashowContainerComponent implements OnInit {
         if (event.key == "ArrowRight") {
             this.diashow.next();
         }
+
         if (event.key == "ArrowLeft") {
             this.diashow.before();
+        }
+
+        if (event.key == "Alt") {
+            this.diashow.hideMenu = !this.diashow.hideMenu;
         }
     }
 }
